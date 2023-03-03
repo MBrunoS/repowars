@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
+import { GameContext } from "../../context/GameContext";
 
 import styles from "./introScreen.module.css";
 
 export const IntroScreen: React.FC = () => {
+  const { handleStartGame } = useContext(GameContext);
+
   return (
-    <div>
+    <>
       <h1 className={styles.title}>
         <span
           className={styles.repo}
@@ -18,7 +21,9 @@ export const IntroScreen: React.FC = () => {
         <span className={styles.wars}>WARS</span>
       </h1>
       <p className={styles.description}>Github repositories guessing game</p>
-      <button className={styles.btnStart}>Start</button>
-    </div>
+      <button className={styles.btnStart} onClick={handleStartGame}>
+        Start
+      </button>
+    </>
   );
 };
