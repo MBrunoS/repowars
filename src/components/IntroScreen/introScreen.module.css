@@ -149,9 +149,34 @@
   );
 }
 
-.btnStart:active {
+.btnStart:active:not(:disabled) {
   box-shadow: none;
   transform: translate3d(0, 5px, 0);
+}
+
+.btnStart:disabled {
+  cursor: not-allowed;
+  position: relative;
+}
+
+.btnStart:disabled::after {
+  content: "Loading...";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    0deg,
+    var(--color-primary),
+    var(--color-secondary)
+  );
+  color: var(--color-text);
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 @keyframes info-reveal {

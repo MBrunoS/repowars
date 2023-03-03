@@ -4,7 +4,7 @@ import { GameContext } from "../../context/GameContext";
 import styles from "./introScreen.module.css";
 
 export const IntroScreen: React.FC = () => {
-  const { handleStartGame } = useContext(GameContext);
+  const { handleStartGame, isReposLoading } = useContext(GameContext);
 
   return (
     <>
@@ -21,7 +21,12 @@ export const IntroScreen: React.FC = () => {
         <span className={styles.wars}>WARS</span>
       </h1>
       <p className={styles.description}>Github repositories guessing game</p>
-      <button className={styles.btnStart} onClick={handleStartGame}>
+
+      <button
+        className={styles.btnStart}
+        onClick={handleStartGame}
+        disabled={isReposLoading}
+      >
         Start
       </button>
     </>
