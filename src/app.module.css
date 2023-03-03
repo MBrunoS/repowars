@@ -1,2 +1,20 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@200;400;700&display=swap");
+
+:root {
+  --color-primary: rgb(111, 54, 125);
+  --color-secondary: rgb(76, 43, 100);
+  --color-text: rgb(216, 213, 244);
+  --color-background: rgb(39, 19, 56);
+  --font-title: "Press Start 2P", sans-serif;
+  --font-text: "Raleway", sans-serif;
+}
+
 .App {
+  height: 100svh;
+  background-color: var(--color-background);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
 }

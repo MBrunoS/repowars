@@ -1,0 +1,161 @@
+.title {
+  color: var(--color-text);
+  transform: translate3d(0, 4rem, 0);
+  animation: title-translate 1s cubic-bezier(0.46, 0.29, 0, 1.24) 2.5s forwards;
+}
+
+.title > span {
+  display: block;
+  font-size: 5rem;
+  font-weight: bold;
+  font-family: var(--font-title);
+  text-align: center;
+}
+
+@keyframes title-wars-reveal {
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* "REPO" GLITCH EFFECT */
+
+.title .repo {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.title .repo span {
+  grid-row-start: 1;
+  grid-column-start: 1;
+  --stack-height: calc(100% / var(--stacks) - 1px);
+  --inverse-index: calc(calc(var(--stacks) - 1) - var(--index));
+  --clip-top: calc(var(--stack-height) * var(--index));
+  --clip-bottom: calc(var(--stack-height) * var(--inverse-index));
+  clip-path: inset(var(--clip-top) 0 var(--clip-bottom) 0);
+  animation: title-repo-reveal 600ms cubic-bezier(0.46, 0.29, 0, 1.24) 1
+      backwards calc(var(--index) * 120ms),
+    title-shadow 2s 1.5s forwards;
+}
+
+.title .repo::after {
+  content: attr(data-text);
+  grid-row-start: 1;
+  grid-column-start: 1;
+  z-index: 3;
+  opacity: 0;
+  animation: override-text 100ms 600ms forwards;
+}
+
+.stack span:nth-child(odd) {
+  --glitch-translate: 8px;
+}
+.stack span:nth-child(even) {
+  --glitch-translate: -8px;
+}
+
+/* WARS TEXT LETTERS ANIMATION */
+
+.title .wars {
+  padding: 1.1rem 0.6rem 0.7rem 1rem;
+  transform: scale(3);
+  opacity: 0;
+  animation: title-wars-reveal 0.5s 1s cubic-bezier(1, 0, 0.2, 1.24),
+    title-shadow 1s 1.5s;
+  animation-fill-mode: forwards;
+}
+
+/* REPO TEXT LETTERS ANIMATION */
+
+@keyframes title-repo-reveal {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%);
+    text-shadow: -2px 3px 0 red, 2px -3px 0 blue;
+  }
+  60% {
+    opacity: 0.5;
+    transform: translateX(50%);
+  }
+  80% {
+    transform: none;
+    opacity: 1;
+    text-shadow: 2px -3px 0 red, -2px 3px 0 blue;
+  }
+  100% {
+    text-shadow: none;
+  }
+}
+
+@keyframes override-text {
+  to {
+    opacity: 1;
+  }
+}
+
+/* WHOLE TITLE ANIMATIONS */
+
+@keyframes title-shadow {
+  to {
+    text-shadow: rgba(111, 54, 125, 0.85) 0px 5px,
+      rgba(111, 54, 125, 0.65) 0px 10px, rgba(111, 54, 125, 0.45) 0px 15px,
+      rgba(111, 54, 125, 0.25) 0px 20px, rgba(111, 54, 125, 0.05) 0px 25px;
+  }
+}
+
+@keyframes title-translate {
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+/* DESCRIPTION */
+
+.description {
+  color: var(--color-text);
+  font: 400 1.25rem var(--font-text);
+  text-align: center;
+  margin: 3rem 0;
+  opacity: 0;
+  animation: info-reveal 0.5s 3s forwards;
+}
+
+.btnStart {
+  display: block;
+  cursor: pointer;
+  margin: 0 auto;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--color-primary);
+  color: var(--color-text);
+  font: 700 1.25rem var(--font-text);
+  text-transform: uppercase;
+  transition: background 0.2s ease-in-out;
+  opacity: 0;
+  animation: info-reveal 0.5s 3.5s forwards;
+  background: linear-gradient(
+    0deg,
+    var(--color-secondary),
+    var(--color-primary)
+  );
+  box-shadow: rgb(65, 37, 85) 0px 5px;
+}
+
+.btnStart:hover {
+  background: linear-gradient(
+    0deg,
+    var(--color-primary),
+    var(--color-secondary)
+  );
+}
+
+.btnStart:active {
+  box-shadow: none;
+  transform: translate3d(0, 5px, 0);
+}
+
+@keyframes info-reveal {
+  to {
+    opacity: 1;
+  }
+}
