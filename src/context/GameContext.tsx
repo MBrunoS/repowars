@@ -1,6 +1,6 @@
 import { createContext, useState } from "react";
 import { Repo } from "../@types/Repo";
-import { useRepos } from "../components/hooks";
+import { useRepos } from "../hooks";
 
 type GameContextType = {
   isGameStarted: boolean;

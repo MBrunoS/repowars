@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { Repo } from "../../@types/Repo";
-import { githubClient } from "../../api";
+import { Repo } from "../@types/Repo";
+import { githubClient } from "../api";
 
 function getRandomInt() {
   return Math.floor(Math.random() * 1000000);
