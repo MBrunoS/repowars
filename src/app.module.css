@@ -2,20 +2,25 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@200;400;700&display=swap");
 
 :root {
-  --color-primary: rgb(111, 54, 125);
-  --color-secondary: rgb(76, 43, 100);
-  --color-tertiary: rgb(209, 160, 226);
-  --color-quaternary: rgb(159, 134, 215);
-  --color-text: rgb(216, 213, 244);
-  --color-background: rgb(39, 19, 56);
   --font-title: "Press Start 2P", sans-serif;
   --font-text: "Raleway", sans-serif;
+
+  --brand-50: 243 236 249;
+  --brand-100: 221 202 237;
+  --brand-200: 199 167 225;
+  --brand-300: 177 133 214;
+  --brand-400: 155 99 202;
+  --brand-500: 133 65 190;
+  --brand-600: 106 52 152;
+  --brand-700: 80 39 114;
+  --brand-800: 53 26 76;
+  --brand-900: 27 13 38;
 }
 
 .App {
   height: 100svh;
-  background-color: var(--color-background);
-  color: var(--color-text);
+  background-color: rgb(var(--brand-900));
+  color: rgb(var(--brand-100));
   display: flex;
   flex-direction: column;
   justify-content: center;
