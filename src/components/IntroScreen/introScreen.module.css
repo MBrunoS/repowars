@@ -1,7 +1,7 @@
 .title {
-  color: var(--color-text);
   transform: translate3d(0, 4rem, 0);
-  animation: title-translate 1s cubic-bezier(0.46, 0.29, 0, 1.24) 2.5s forwards;
+  animation: title-translate 1s cubic-bezier(0.46, 0.29, 0, 1.24) 2.5s forwards,
+    title-movement 1.5s ease-in-out 4s infinite;
 }
 
 .title > span {
@@ -110,10 +110,21 @@
   }
 }
 
+@keyframes title-movement {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(0, 0.5rem, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
 /* DESCRIPTION */
 
 .description {
-  color: var(--color-text);
   font: 400 1.25rem var(--font-text);
   text-align: center;
   margin: 3rem 0;
@@ -127,6 +138,7 @@
   margin: 0 auto;
   padding: 0.5rem 1rem;
   border: 1px solid var(--color-primary);
+  border-radius: 0.25rem;
   color: var(--color-text);
   font: 700 1.25rem var(--font-text);
   text-transform: uppercase;
@@ -141,7 +153,8 @@
   box-shadow: rgb(65, 37, 85) 0px 5px;
 }
 
-.btnStart:hover {
+.btnStart:hover,
+.btnStart:focus {
   background: linear-gradient(
     0deg,
     var(--color-primary),
@@ -171,7 +184,6 @@
     var(--color-primary),
     var(--color-secondary)
   );
-  color: var(--color-text);
   text-transform: uppercase;
   font-size: 0.8rem;
   display: flex;
