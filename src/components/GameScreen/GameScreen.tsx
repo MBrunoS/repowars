@@ -29,7 +29,7 @@ export const GameScreen: React.FC = () => {
 
           <div className={styles.reposContainer}>
             <RepoCard content={repoA} handler={handleRepoChoice} />
-            <p className={styles.versus}>X</p>
+            <p className={styles.versus}>vs</p>
             <RepoCard content={repoB} handler={handleRepoChoice} />
           </div>
         </>
