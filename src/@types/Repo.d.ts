@@ -13,5 +13,6 @@ export interface Repo {
   has_downloads: boolean;
   has_wiki: boolean;
   has_pages: boolean;
+  has_discussions: boolean;
   forks_count: number;
 }
