@@ -4,12 +4,18 @@
   justify-content: space-between;
   align-items: center;
   gap: 1rem;
-  height: 100%;
-  padding: 2rem 0.5rem;
+  min-height: 100svh;
+  padding: 2rem 1rem;
   font-family: var(--font-text);
 }
 
-.title,
+.title {
+  font-weight: 700;
+  font-size: 1.625rem;
+  padding: 0.5rem;
+  text-align: center;
+}
+
 .versus {
   font-weight: 700;
   font-family: var(--font-title);
@@ -17,11 +23,6 @@
   text-shadow: rgb(var(--brand-700) / 0.85) 0px 1px,
     rgb(var(--brand-700) / 0.65) 0px 2px, rgb(var(--brand-700) / 0.45) 0px 3px,
     rgb(var(--brand-700) / 0.25) 0px 4px, rgb(var(--brand-700) / 0.05) 0px 5px;
-}
-
-.title {
-  font-size: 1.25rem;
-  padding: 0.5rem;
 }
 
 .score {
@@ -91,4 +92,39 @@
 .button:active {
   box-shadow: none;
   transform: translate3d(0, 5px, 0);
+}
+
+@media only screen and (min-width: 768px) {
+  :root {
+    font-size: 1.125rem;
+  }
+
+  .gameScreen {
+    padding: 3.5rem 2rem;
+  }
+
+  .reposContainer {
+    gap: 2rem;
+    min-width: 100%;
+  }
+}
+
+@media only screen and (min-width: 1180px) {
+  :root {
+    font-size: 1.25rem;
+  }
+  .title {
+    font-size: 2rem;
+  }
+
+  .reposContainer {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .versus {
+    flex-grow: 0;
+  }
 }
