@@ -24,6 +24,28 @@
   padding: 0.5rem;
 }
 
+.score {
+  display: flex;
+  gap: 1rem;
+  font-size: 1.25rem;
+  padding: 0.5rem;
+}
+
+.scoreCorrect,
+.scoreWrong {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.scoreCorrect {
+  color: var(--success-color);
+}
+
+.scoreWrong {
+  color: var(--error-color);
+}
+
 .versus {
   font: bold 2rem var(--font-title);
 }

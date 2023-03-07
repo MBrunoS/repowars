@@ -15,6 +15,9 @@
   --brand-700: 80 39 114;
   --brand-800: 53 26 76;
   --brand-900: 27 13 38;
+
+  --success-color: #68d391;
+  --error-color: #fc8181;
 }
 
 .App {
