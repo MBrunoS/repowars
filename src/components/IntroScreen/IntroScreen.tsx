@@ -4,7 +4,11 @@ import { GameContext } from "../../context/GameContext";
 import styles from "./introScreen.module.css";
 
 export const IntroScreen: React.FC = () => {
-  const { handleStartGame, isReposLoading } = useContext(GameContext);
+  const { setIsGameStarted, isReposLoading } = useContext(GameContext);
+
+  const handleStartGame = () => {
+    setIsGameStarted(true);
+  };
 
   return (
     <>

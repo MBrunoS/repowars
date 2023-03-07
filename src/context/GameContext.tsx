@@ -14,7 +14,6 @@ type GameContextType = {
       wrong: number;
     }>
   >;
-  handleStartGame: () => void;
   repos: Repo[];
   isReposLoading: boolean;
 };
@@ -35,10 +34,6 @@ export const GameContextProvider: React.FC<GameContextProviderProps> = ({
   const [score, setScore] = useState({ correct: 0, wrong: 0 });
   const { repos, isReposLoading } = useRepos(40);
 
-  const handleStartGame = () => {
-    setIsGameStarted(true);
-  };
-
   return (
     <GameContext.Provider
       value={{
@@ -48,7 +43,6 @@ export const GameContextProvider: React.FC<GameContextProviderProps> = ({
         setIsGameFinished,
         score,
         setScore,
-        handleStartGame,
         repos,
         isReposLoading,
       }}
