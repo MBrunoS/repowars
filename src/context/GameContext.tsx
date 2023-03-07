@@ -4,7 +4,16 @@ import { useRepos } from "../hooks";
 
 type GameContextType = {
   isGameStarted: boolean;
-  setIsGameStarted: (isGameStarted: boolean) => void;
+  setIsGameStarted: React.Dispatch<React.SetStateAction<boolean>>;
+  isGameFinished: boolean;
+  setIsGameFinished: React.Dispatch<React.SetStateAction<boolean>>;
+  score: { correct: number; wrong: number };
+  setScore: React.Dispatch<
+    React.SetStateAction<{
+      correct: number;
+      wrong: number;
+    }>
+  >;
   handleStartGame: () => void;
   repos: Repo[];
   isReposLoading: boolean;
@@ -22,7 +31,9 @@ export const GameContextProvider: React.FC<GameContextProviderProps> = ({
   children,
 }) => {
   const [isGameStarted, setIsGameStarted] = useState(false);
-  const { repos, isReposLoading } = useRepos(50);
+  const [isGameFinished, setIsGameFinished] = useState(false);
+  const [score, setScore] = useState({ correct: 0, wrong: 0 });
+  const { repos, isReposLoading } = useRepos(40);
 
   const handleStartGame = () => {
     setIsGameStarted(true);
@@ -33,6 +44,10 @@ export const GameContextProvider: React.FC<GameContextProviderProps> = ({
       value={{
         isGameStarted,
         setIsGameStarted,
+        isGameFinished,
+        setIsGameFinished,
+        score,
+        setScore,
         handleStartGame,
         repos,
         isReposLoading,
