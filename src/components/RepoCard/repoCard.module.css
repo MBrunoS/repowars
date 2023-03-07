@@ -55,12 +55,6 @@
   text-align: center;
 }
 
-.stats {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
-
 .statsItem {
   display: flex;
   gap: 0.25rem;
@@ -70,6 +64,7 @@
   color: rgb(var(--brand-400));
 }
 
+.stats,
 .booleans {
   display: flex;
   justify-content: center;
@@ -102,6 +97,6 @@
 
 @media only screen and (min-width: 1180px) {
   .container {
-    width: 400px;
+    width: 25rem;
   }
 }

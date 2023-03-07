@@ -43,70 +43,68 @@ export const RepoCard: React.FC<RepoCardProps> = ({ content, handler }) => {
             {content.stargazers_count}
             <FaCodeBranch className={styles.statsIcon} />
           </div>
-
-          <ul className={styles.booleans}>
-            <li>
-              <TbPageBreak
-                title="Has Pages"
-                className={
-                  content.has_pages
-                    ? styles.activeBoolean
-                    : styles.disabledBoolean
-                }
-              />
-            </li>
-            <li>
-              <VscIssues
-                title="Has Issues"
-                className={
-                  content.has_issues
-                    ? styles.activeBoolean
-                    : styles.disabledBoolean
-                }
-              />
-            </li>
-            <li>
-              <VscCommentDiscussion
-                title="Has Discussions"
-                className={
-                  content.has_discussions
-                    ? styles.activeBoolean
-                    : styles.disabledBoolean
-                }
-              />
-            </li>
-            <li>
-              <BsBook
-                title="Has Wiki"
-                className={
-                  content.has_wiki
-                    ? styles.activeBoolean
-                    : styles.disabledBoolean
-                }
-              />
-            </li>
-            <li>
-              <FaDownload
-                title="Has Downloads"
-                className={
-                  content.has_downloads
-                    ? styles.activeBoolean
-                    : styles.disabledBoolean
-                }
-              />
-            </li>
-            <li>
-              <VscProject
-                title="Has Projects"
-                className={
-                  content.has_projects
-                    ? styles.activeBoolean
-                    : styles.disabledBoolean
-                }
-              />
-            </li>
-          </ul>
         </div>
+
+        <ul className={styles.booleans}>
+          <li>
+            <TbPageBreak
+              title="Has Pages"
+              className={
+                content.has_pages
+                  ? styles.activeBoolean
+                  : styles.disabledBoolean
+              }
+            />
+          </li>
+          <li>
+            <VscIssues
+              title="Has Issues"
+              className={
+                content.has_issues
+                  ? styles.activeBoolean
+                  : styles.disabledBoolean
+              }
+            />
+          </li>
+          <li>
+            <VscCommentDiscussion
+              title="Has Discussions"
+              className={
+                content.has_discussions
+                  ? styles.activeBoolean
+                  : styles.disabledBoolean
+              }
+            />
+          </li>
+          <li>
+            <BsBook
+              title="Has Wiki"
+              className={
+                content.has_wiki ? styles.activeBoolean : styles.disabledBoolean
+              }
+            />
+          </li>
+          <li>
+            <FaDownload
+              title="Has Downloads"
+              className={
+                content.has_downloads
+                  ? styles.activeBoolean
+                  : styles.disabledBoolean
+              }
+            />
+          </li>
+          <li>
+            <VscProject
+              title="Has Projects"
+              className={
+                content.has_projects
+                  ? styles.activeBoolean
+                  : styles.disabledBoolean
+              }
+            />
+          </li>
+        </ul>
 
         <ul className={styles.topics}>
           {content.topics.map((topic) => (
