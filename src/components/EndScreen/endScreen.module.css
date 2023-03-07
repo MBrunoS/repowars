@@ -1,0 +1,82 @@
+.endScreen {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  padding: 1.5rem;
+}
+
+.message {
+  font: 700 1.5rem var(--font-title);
+  line-height: 1.5;
+  color: rgb(var(--brand-400));
+  text-align: center;
+  max-width: 30rem;
+}
+
+.scoreCard {
+  background-color: rgb(var(--brand-800));
+  padding: 1.5rem 2rem;
+  border-radius: 0.5rem;
+}
+
+.scoreTitle {
+  font: 700 1.5rem var(--font-text);
+  color: rgb(var(--brand-50));
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+}
+
+.correctScore,
+.wrongScore {
+  font-size: 1.25rem;
+  font-family: var(--font-text);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.correctScore {
+  color: var(--success-color);
+}
+
+.wrongScore {
+  color: var(--error-color);
+}
+
+.btnRestart {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--brand-700);
+  border-radius: 0.25rem;
+  color: rgb(var(--brand-50));
+  font: 700 1.25rem var(--font-text);
+  text-transform: uppercase;
+  transition: background 0.2s ease-in-out;
+  background: linear-gradient(
+    0deg,
+    rgb(var(--brand-700)),
+    rgb(var(--brand-500))
+  );
+  box-shadow: rgb(var(--brand-800)) 0px 5px;
+}
+
+.btnRestart:hover,
+.btnRestart:focus {
+  background: linear-gradient(
+    180deg,
+    rgb(var(--brand-700)),
+    rgb(var(--brand-500))
+  );
+}
+
+.btnRestart:active {
+  box-shadow: none;
+  transform: translate3d(0, 5px, 0);
+}
