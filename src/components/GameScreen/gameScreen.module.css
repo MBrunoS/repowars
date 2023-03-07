@@ -25,6 +25,14 @@
     rgb(var(--brand-700) / 0.25) 0px 4px, rgb(var(--brand-700) / 0.05) 0px 5px;
 }
 
+.gameStatus {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  width: 100%;
+}
+
 .score {
   display: flex;
   gap: 1rem;
@@ -35,7 +43,6 @@
 .scoreCorrect,
 .scoreWrong {
   display: flex;
-  align-items: center;
   gap: 0.5rem;
 }
 
@@ -64,9 +71,10 @@
 }
 
 .button {
-  display: block;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
   cursor: pointer;
-  margin: 0 auto;
   padding: 0.5rem 1rem;
   border: 1px solid rgb(var(--brand-500));
   border-radius: 0.25rem;
@@ -112,6 +120,12 @@
 @media only screen and (min-width: 1180px) {
   .title {
     font-size: 2rem;
+  }
+
+  .gameStatus {
+    flex-direction: column;
+    gap: 0;
+    justify-content: center;
   }
 
   .reposContainer {
