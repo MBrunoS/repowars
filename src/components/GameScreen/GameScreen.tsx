@@ -71,31 +71,28 @@ export const GameScreen: React.FC = () => {
 
   return (
     <div className={styles.gameScreen}>
+      <h1 className={styles.title}>Choose the repo with the most stars</h1>
+
+      <div className={styles.gameStatus}>
+        <div className={styles.score}>
+          <p className={styles.scoreCorrect}>
+            <FaCheckCircle /> {score.correct}
+          </p>
+          <p className={styles.scoreWrong}>
+            <FaTimesCircle /> {score.wrong}
+          </p>
+        </div>
+
+        <div className={styles.counter}>
+          {counter}/{totalMatches}
+        </div>
+      </div>
       {repoA.id && repoB.id && (
-        <>
-          <h1 className={styles.title}>Choose the repo with the most stars</h1>
-
-          <div className={styles.gameStatus}>
-            <div className={styles.score}>
-              <p className={styles.scoreCorrect}>
-                <FaCheckCircle /> {score.correct}
-              </p>
-              <p className={styles.scoreWrong}>
-                <FaTimesCircle /> {score.wrong}
-              </p>
-            </div>
-
-            <div className={styles.counter}>
-              {counter}/{totalMatches}
-            </div>
-          </div>
-
-          <div className={styles.reposContainer}>
-            <RepoCard content={repoA} handler={handleRepoChoice} />
-            <p className={styles.versus}>vs</p>
-            <RepoCard content={repoB} handler={handleRepoChoice} />
-          </div>
-        </>
+        <div className={styles.reposContainer}>
+          <RepoCard content={repoA} handler={handleRepoChoice} />
+          <p className={styles.versus}>vs</p>
+          <RepoCard content={repoB} handler={handleRepoChoice} />
+        </div>
       )}
 
       <div className={styles.buttons}>
