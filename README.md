@@ -56,9 +56,6 @@ yarn
 yarn dev
 ```
 
-Usage
-Provide examples showing how to use or interact with the project
-
 ## Testing
 
 To run the tests, run the following command:
