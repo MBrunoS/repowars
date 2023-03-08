@@ -31,11 +31,11 @@ export const GameScreen: React.FC = () => {
     const [newRepoA, newRepoB] = randomRepos.generate(localRepos);
 
     const newLocalRepos = localRepos.filter(
-      (repo) => repo.id !== newRepoA.id && repo.id !== newRepoB.id
+      (repo) => repo.id !== newRepoA!.id && repo.id !== newRepoB!.id
     );
 
-    setRepoA(newRepoA);
-    setRepoB(newRepoB);
+    setRepoA(newRepoA!);
+    setRepoB(newRepoB!);
     setLocalRepos(newLocalRepos);
   }
 
