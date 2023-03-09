@@ -58,6 +58,7 @@ export const GameScreen: React.FC = () => {
 
   function handleReturnGame() {
     setIsGameStarted(false);
+    setScore({ correct: 0, wrong: 0 });
   }
 
   function handleSkip() {
